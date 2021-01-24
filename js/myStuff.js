@@ -1,7 +1,3 @@
-setTimeout(function () {
-	location.href = "rocket.html";
-}, 2000);
-
 // this function does this.
 var doCoolStuff = function () {
 	var currentClassName = document.getElementById("cool").className;
@@ -12,6 +8,10 @@ var doCoolStuff = function () {
 		document.getElementById("cool").className = "cool"
 	}
 }
+
+setTimeout(function () {
+	location.href = "rocket.html";
+}, 2000);
 
 var sayMyName = function (name) {
 	alert("My name is: "+name);
