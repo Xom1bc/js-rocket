@@ -1,30 +1,30 @@
-var timer = null
-var countdownNumber = 10
+var timer = null;
+var countdownNumber = 10;
 
 var changeState = function (state) {
-	document.body.className = "body-state"+state;
+	document.body.className = 'body-state'+state;
 	clearInterval(timer);
 	countdownNumber = 10;
-	document.getElementById("countdown").innerHTML = countdownNumber;
+	document.getElementById('countdown').innerHTML = countdownNumber;
 
-	//countdown
+	// countdown
 	if (state == 2) {
 		timer = setInterval(function () {
-			countdownNumber = countdownNumber -1;
-			document.getElementById("countdown").innerHTML = countdownNumber;
-
-			if (countdownNumber > 4  && countdownNumber <= 7) {
+			countdownNumber = countdownNumber-1;
+			document.getElementById('countdown').innerHTML = countdownNumber;
+			
+			if (countdownNumber > 4 && countdownNumber <= 7) {
 				// be nervous
-				document.getElementById("nervous").className = "nervous show";
+				document.getElementById('nervous').className = 'nervous show';
 			} else{
-				document.getElementById("nervous").className = "nervous";
+				document.getElementById('nervous').className = 'nervous';
 			}
 
-			if (countdownNumber > 1  && countdownNumber <= 4) {
-				// cant wait
-				document.getElementById("cant-wait").className = "cant-wait show";
-			} else{
-				document.getElementById("cant-wait").className = "cant-wait";
+			if (countdownNumber > 1 && countdownNumber <= 4) {
+				// can't wait
+				document.getElementById('cant-wait').className = 'cant-wait show';
+			} else {
+				document.getElementById('cant-wait').className = 'cant-wait';
 			}
 
 			if (countdownNumber <= 0) {
@@ -35,14 +35,14 @@ var changeState = function (state) {
 		var success = setTimeout(function () {
 				var randomNumber = Math.round(Math.random()*10);
 
-				console.log("randomNumber:", randomNumber)
+				console.log('randomNumber:', randomNumber)
 
-				//success
+				// succes
 				if (randomNumber > 2) {
 					changeState(4);
 
 				} else {
-					changeState(5); //oh no!
+					changeState(5); // oh no!
 				}
 		}, 2000);
 	};
